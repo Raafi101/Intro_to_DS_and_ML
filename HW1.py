@@ -15,18 +15,20 @@ import sklearn.linear_model as linMod
 from sklearn.metrics import mean_squared_error, r2_score
 
 import statsmodels.api as sm
-import statsmodels.formula.api as smf # more convenient
+import statsmodels.formula.api as smf  # more convenient
 
 import os
 
 # Question 5 ===============================================
 
 
-
-
 # Question 10 ==============================================
 
-UP_DIR = "C:\\Users\\Rafha\\OneDrive\\Documents\\GitHub\\STAT72401\\Datasets"
+# Laptop Path
+#UP_DIR = "C:\\Users\\Rafha\\OneDrive\\Documents\\GitHub\\STAT72401\\Datasets"
+
+# Desktop Path
+UP_DIR = "C:\\Users\\Rafha\\Desktop\\Code\\STAT72401\\Datasets"
 
 csvPath = os.path.join(UP_DIR, 'Carseats.csv')
 CarData = pd.read_csv(csvPath)
@@ -35,7 +37,7 @@ print(CarData.head())
 
 regress = linMod.LinearRegression()
 
-X = CarData[['Price']] # Inputs (Price, Urban, US)
+X = CarData[['Price']]  # Inputs (Price, Urban, US)
 y = CarData['Sales']
 
 preX = CarData[['Urban', 'US']]
